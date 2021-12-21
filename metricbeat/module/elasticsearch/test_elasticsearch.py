@@ -23,12 +23,8 @@ class Test(metricbeat.BaseTest):
         self.ml_es = client.ml.MlClient(self.es)
 
         es_version = self.get_version()
-        if es_version["major"] < 7:
-            self.license_url = "/_xpack/license"
-            self.ml_anomaly_detectors_url = "/_xpack/ml/anomaly_detectors"
-        else:
-            self.license_url = "/_license"
-            self.ml_anomaly_detectors_url = "/_ml/anomaly_detectors"
+        self.license_url = "/"
+        self.ml_anomaly_detectors_url = "/_ml/anomaly_detectors"
 
         self.start_trial()
         self.es.indices.create(index='test_index', ignore=400)

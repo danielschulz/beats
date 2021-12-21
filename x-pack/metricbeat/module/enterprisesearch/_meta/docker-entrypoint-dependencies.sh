@@ -6,7 +6,7 @@ set -e
 export USERNAME=`env | grep elasticsearch.\\username= | cut -d= -f2-`
 export PASSWORD=`env | grep elasticsearch.\\password= | cut -d= -f2-`
 
-until curl -u $USERNAME:$PASSWORD -f -s "http://elasticsearch:9200/_license"; do
+until curl -u $USERNAME:$PASSWORD -f -s "http://elasticsearch:9200/"; do
   echo "Elasticsearch not available yet".
   sleep 1
 done

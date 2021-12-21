@@ -29,7 +29,7 @@ import (
 	"github.com/elastic/beats/v7/libbeat/logp"
 )
 
-const licenseURL = "/_license"
+const licenseURL = "/"
 
 // params defaults query parameters to send to the '_license' endpoint by default we only need
 // machine parseable data.

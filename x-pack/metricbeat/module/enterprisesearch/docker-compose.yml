@@ -37,7 +37,7 @@ services:
         hard: -1
     # Override healthcheck to add user / password
     healthcheck:
-      test: ["CMD", "curl", "-u", "elastic:changeme", "-f", "http://localhost:9200/_license"]
+      test: ["CMD", "curl", "-u", "elastic:changeme", "-f", "http://localhost:9200/"]
       interval: 30s
       timeout: 10s
     ports:

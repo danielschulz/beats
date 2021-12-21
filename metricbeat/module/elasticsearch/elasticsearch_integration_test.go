@@ -346,11 +346,7 @@ func enableTrialLicense(host string, version *common.Version) error {
 // checkTrialLicenseEnabled creates and elasticsearch index in case it does not exit yet
 func checkTrialLicenseEnabled(host string, version *common.Version) (bool, error) {
 	var licenseURL string
-	if version.Major < 7 {
-		licenseURL = "/_xpack/license"
-	} else {
-		licenseURL = "/_license"
-	}
+	licenseURL = "/"
 
 	resp, err := http.Get("http://" + host + licenseURL)
 	if err != nil {

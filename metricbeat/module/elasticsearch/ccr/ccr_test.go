@@ -58,7 +58,7 @@ func startESServer(esVersion, license string, ccrEnabled bool) *httptest.Server 
 	mux.Handle("/_nodes/_local/nodes", http.HandlerFunc(nodesLocalHandler))
 	mux.Handle("/_cluster/state/master_node", http.HandlerFunc(clusterStateMasterHandler))
 	mux.Handle("/", http.HandlerFunc(rootHandler))
-	mux.Handle("/_license", http.HandlerFunc(licenseHandler))       // for 7.0 and above
+	mux.Handle("/", http.HandlerFunc(licenseHandler))               // for 7.0 and above
 	mux.Handle("/_xpack/license", http.HandlerFunc(licenseHandler)) // for before 7.0
 	mux.Handle("/_xpack", http.HandlerFunc(xpackHandler))
 	mux.Handle("/_ccr/stats", http.HandlerFunc(ccrStatsHandler))

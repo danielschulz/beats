@@ -32,7 +32,7 @@ import (
 
 func newServerClientPair(t *testing.T, handler http.HandlerFunc) (*httptest.Server, *eslegclient.Connection) {
 	mux := http.NewServeMux()
-	mux.Handle("/_license/", http.HandlerFunc(handler))
+	mux.Handle("/", http.HandlerFunc(handler))
 
 	server := httptest.NewServer(mux)
 
